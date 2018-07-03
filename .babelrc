@@ -1,0 +1,35 @@
+{
+  "presets": [
+    "@babel/preset-flow",
+    "@babel/env",
+    [
+      "@babel/preset-stage-0",
+      {
+        "decoratorsLegacy": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "react-optimize"
+      ],
+      "plugins": [
+        "dev-expression"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+        [
+          "flow-runtime",
+          {
+            "assert": true,
+            "annotate": true
+          }
+        ]
+      ]
+    }
+  }
+}
